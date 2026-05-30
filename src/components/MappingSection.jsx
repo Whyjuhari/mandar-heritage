@@ -71,7 +71,7 @@ function MappingSection() {
           </p>
 
           {/* Interactive map */}
-          <div className="aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-xl relative group bg-surface-container-high">
+          <div className="h-[360px] sm:h-[420px] md:h-auto md:aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-xl relative group bg-surface-container-high">
             <Suspense fallback={<MapFallback />}>
               <InteractiveMap />
             </Suspense>

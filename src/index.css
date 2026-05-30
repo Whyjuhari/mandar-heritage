@@ -160,6 +160,9 @@ body {
   margin: 0 !important;
   width: auto !important;
 }
+.leaflet-popup-pane {
+  z-index: 1100 !important;
+}
 .leaflet-popup-tip {
   background: #ffffff !important;
   box-shadow: none !important;
