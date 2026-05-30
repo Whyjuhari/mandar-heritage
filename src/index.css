@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #33210d;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #4b3621;
+  --color-on-primary-container: #bd9f83;
+  --color-secondary: #775a19;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed488;
+  --color-on-secondary-container: #785a1a;
+  --color-secondary-fixed: #ffdea5;
+  --color-secondary-fixed-dim: #e9c176;
+  --color-on-secondary-fixed: #261900;
+  --color-on-secondary-fixed-variant: #5d4201;
+  --color-tertiary: #112a1b;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #27402f;
+  --color-on-tertiary-container: #90ab96;
+  --color-surface: #fdf9ef;
+  --color-surface-dim: #dddad0;
+  --color-surface-bright: #fdf9ef;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f7f3e9;
+  --color-surface-container: #f1eee4;
+  --color-surface-container-high: #ece8de;
+  --color-surface-container-highest: #e6e2d8;
+  --color-on-surface: #1c1c16;
+  --color-on-surface-variant: #4e453d;
+  --color-outline: #80756c;
+  --color-outline-variant: #d2c4ba;
+  --color-inverse-surface: #31312a;
+  --color-inverse-on-surface: #f4f0e7;
+  --color-inverse-primary: #e1c1a4;
+  --color-background: #fdf9ef;
+  --color-on-background: #1c1c16;
+  --color-surface-variant: #e6e2d8;
+  --color-surface-tint: #725a42;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+
+  /* Font families */
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fdf9ef;
+  color: #1c1c16;
+  font-family: "Inter", sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+.weaving-bg {
+  background-image: radial-gradient(#d2c4ba 0.5px, transparent 0.5px),
+                    radial-gradient(#d2c4ba 0.5px, #fdf9ef 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.hull-shape {
+  clip-path: ellipse(100% 70% at 50% 100%);
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(51, 33, 13, 0.1);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Leaflet overrides ──────────────────────────────────── */
+
+/* Zoom control */
+.leaflet-control-zoom {
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(51, 33, 13, 0.12) !important;
+}
+.leaflet-control-zoom a {
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #33210d !important;
+  border-bottom: 1px solid rgba(51, 33, 13, 0.08) !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+.leaflet-control-zoom a:last-child {
+  border-bottom: none !important;
+}
+.leaflet-control-zoom a:hover {
+  background: #fdf9ef !important;
+  color: #775a19 !important;
+}
+
+/* Layer control */
+.leaflet-control-layers {
+  border: 1px solid rgba(51, 33, 13, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(51, 33, 13, 0.1) !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  overflow: hidden;
+}
+.leaflet-control-layers-toggle {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 10px !important;
+}
+.leaflet-control-layers-expanded {
+  padding: 10px 14px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  color: #33210d !important;
+}
+.leaflet-control-layers-base label,
+.leaflet-control-layers-overlays label {
+  font-size: 12px !important;
+  color: #33210d !important;
+  font-weight: 500 !important;
+  margin: 3px 0 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+/* Popup */
+.leaflet-popup-content-wrapper {
+  border-radius: 14px !important;
+  box-shadow: 0 8px 28px -4px rgba(51, 33, 13, 0.18) !important;
+  border: 1px solid rgba(51, 33, 13, 0.08) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+}
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+.leaflet-popup-close-button {
+  color: #33210d !important;
+  opacity: 0.5;
+  top: 8px !important;
+  right: 10px !important;
+  font-size: 18px !important;
+  padding: 0 !important;
+}
+.leaflet-popup-close-button:hover {
+  opacity: 1 !important;
+  background: transparent !important;
+  color: #33210d !important;
+}
+
+/* Attribution */
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.82) !important;
+  font-size: 9px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px 0 0 0 !important;
+}
+
+/* Legend */
+.map-legend {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(51, 33, 13, 0.08);
+  box-shadow: 0 4px 16px rgba(51, 33, 13, 0.1);
+  backdrop-filter: blur(8px);
+  min-width: 188px;
+}
+.map-legend .legend-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #33210d;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 0 0 8px 0;
+  font-family: 'Inter', sans-serif;
+}
+.map-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #4e453d;
+  margin-bottom: 5px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.map-legend .legend-item:last-child {
+  margin-bottom: 0;
+}
+.map-legend .legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.map-legend .legend-dot--fokus {
+  background: #33210d;
+  border: 2.5px solid #e9c176;
+  box-shadow: 0 1px 4px rgba(51, 33, 13, 0.35);
+}
+.map-legend .legend-dot--lanjutan {
+  background: #112a1b;
+  border: 2.5px solid #90ab96;
+  box-shadow: 0 1px 4px rgba(17, 42, 27, 0.35);
+}

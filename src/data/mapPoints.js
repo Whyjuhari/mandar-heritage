@@ -1,0 +1,58 @@
+const mapPoints = [
+  {
+    id: 'polman',
+    name: 'Polewali Mandar',
+    position: [-3.4130, 119.3563],
+    status: 'Fokus Awal',
+    category: 'Budaya & Pertanian',
+    culturalObjects: ['Lipa Saqbe', 'Saiyyang Pattudu'],
+    note: 'Pusat kebudayaan Mandar dengan kekayaan tenun tradisional dan festival kuda menari.',
+  },
+  {
+    id: 'majene',
+    name: 'Majene',
+    position: [-3.5422, 118.9648],
+    status: 'Fokus Awal',
+    category: 'Bahari & Pendidikan',
+    culturalObjects: ['Sandeq', 'Tradisi Pelaut Mandar'],
+    note: 'Kota pendidikan dan bahari, asal perahu layar tradisional Sandeq yang dikenal hingga mancanegara.',
+  },
+  {
+    id: 'mamuju',
+    name: 'Mamuju',
+    position: [-2.6746, 118.8887],
+    status: 'Fokus Awal',
+    category: 'Ibu Kota & Pesisir',
+    culturalObjects: ['Pande Bassi', 'Arsitektur Tradisional'],
+    note: 'Ibu kota Sulawesi Barat dengan potensi dokumentasi kerajinan logam dan arsitektur pesisir.',
+  },
+  {
+    id: 'mamasa',
+    name: 'Mamasa',
+    position: [-2.9484, 119.3887],
+    status: 'Tahap Lanjutan',
+    category: 'Dataran Tinggi & Adat',
+    culturalObjects: ['Rumah Adat Banua', 'Tenun Mamasa'],
+    note: 'Daerah dataran tinggi dengan kekayaan adat, arsitektur tradisional, dan kain tenun khas.',
+  },
+  {
+    id: 'pasangkayu',
+    name: 'Pasangkayu',
+    position: [-1.3406, 119.8490],
+    status: 'Tahap Lanjutan',
+    category: 'Utara & Perkebunan',
+    culturalObjects: ['Tradisi Lisan', 'Seni Pertunjukan'],
+    note: 'Wilayah utara Sulbar dengan potensi dokumentasi tradisi lisan dan seni pertunjukan lokal.',
+  },
+  {
+    id: 'mamuju-tengah',
+    name: 'Mamuju Tengah',
+    position: [-2.9875, 119.2618],
+    status: 'Tahap Lanjutan',
+    category: 'Sentra Transmigrasi',
+    culturalObjects: ['Kuliner Tradisional', 'Kerajinan Lokal'],
+    note: 'Wilayah dengan perpaduan budaya lokal dan transmigrasi yang unik untuk didokumentasikan.',
+  },
+]
+
+export default mapPoints
