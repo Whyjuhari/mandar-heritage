@@ -178,6 +178,106 @@ body {
   color: #33210d !important;
 }
 
+.culture-map-popup .leaflet-popup-content {
+  width: min(260px, calc(100vw - 48px)) !important;
+  max-width: 260px !important;
+}
+.culture-map-popup .leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+}
+.culture-map-popup .leaflet-popup-close-button {
+  align-items: center !important;
+  border-radius: 999px !important;
+  display: flex !important;
+  height: 24px !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  width: 24px !important;
+  z-index: 2;
+}
+.culture-map-popup__body {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  padding: 14px 16px 13px;
+}
+.culture-map-popup__title {
+  color: #33210d;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 24px 8px 0;
+  overflow-wrap: anywhere;
+}
+.culture-map-popup__badge {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin: 0 0 10px;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.culture-map-popup__badge--focus {
+  background: #ffdea5;
+  color: #5d4201;
+}
+.culture-map-popup__badge--next {
+  background: #d4e8d9;
+  color: #1a3d26;
+}
+.culture-map-popup__category {
+  color: #775a19;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.culture-map-popup__note {
+  color: #4e453d;
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 0 0 11px;
+}
+.culture-map-popup__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 11px;
+}
+.culture-map-popup__chip {
+  background: #f7f3e9;
+  border: 1px solid rgba(51, 33, 13, 0.1);
+  border-radius: 999px;
+  color: #4e453d;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 4px 9px;
+}
+.culture-map-popup__disclaimer {
+  border-top: 1px solid rgba(51, 33, 13, 0.08);
+  color: #80756c;
+  font-size: 10px;
+  font-style: italic;
+  line-height: 1.45;
+  margin: 0;
+  padding-top: 9px;
+}
+
+@media (max-width: 640px) {
+  .culture-map-popup .leaflet-popup-content {
+    width: min(236px, calc(100vw - 40px)) !important;
+  }
+  .culture-map-popup__body {
+    padding: 13px 14px 12px;
+  }
+}
+
 /* Attribution */
 .leaflet-control-attribution {
   background: rgba(255, 255, 255, 0.82) !important;

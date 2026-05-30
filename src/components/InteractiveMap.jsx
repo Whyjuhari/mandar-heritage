@@ -25,10 +25,10 @@ function createMarkerIcon(status) {
   })
 }
 
-// Status badge style
-const statusStyle = {
-  'Fokus Awal': { bg: '#ffdea5', color: '#5d4201' },
-  'Tahap Lanjutan': { bg: '#d4e8d9', color: '#1a3d26' },
+function getStatusClass(status) {
+  return status === 'Fokus Awal'
+    ? 'culture-map-popup__badge--focus'
+    : 'culture-map-popup__badge--next'
 }
 
 // FitBounds: auto-zoom agar semua marker terlihat
@@ -134,65 +134,45 @@ function InteractiveMap() {
           icon={createMarkerIcon(point.status)}
         >
           {/* Popup detail — muncul saat marker diklik */}
-          <Popup minWidth={220} maxWidth={260}>
-            <div style={{ padding: '12px 14px' }}>
+          <Popup
+            className="culture-map-popup"
+            minWidth={240}
+            maxWidth={280}
+            autoPanPadding={[24, 24]}
+            keepInView
+          >
+            <div className="culture-map-popup__body">
               {/* Nama wilayah */}
-              <p style={{ fontWeight: 700, fontSize: '14px', color: '#33210d', margin: '0 0 6px 0', lineHeight: 1.3 }}>
+              <p className="culture-map-popup__title">
                 {point.name}
               </p>
 
               {/* Status badge */}
-              <span style={{
-                display: 'inline-block',
-                background: statusStyle[point.status]?.bg ?? '#f5f5f5',
-                color: statusStyle[point.status]?.color ?? '#333',
-                fontSize: '10px',
-                fontWeight: 700,
-                padding: '2px 10px',
-                borderRadius: '999px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                marginBottom: '8px',
-              }}>
+              <span className={`culture-map-popup__badge ${getStatusClass(point.status)}`}>
                 {point.status}
               </span>
 
               {/* Kategori */}
-              <p style={{ fontSize: '11px', color: '#775a19', fontWeight: 600, margin: '0 0 8px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <p className="culture-map-popup__category">
                 {point.category}
               </p>
 
               {/* Catatan */}
-              <p style={{ fontSize: '12px', color: '#4e453d', lineHeight: 1.5, margin: '0 0 10px 0' }}>
+              <p className="culture-map-popup__note">
                 {point.note}
               </p>
 
               {/* Objek budaya */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '10px' }}>
+              <div className="culture-map-popup__chips">
                 {point.culturalObjects.map((obj) => (
-                  <span key={obj} style={{
-                    background: '#f7f3e9',
-                    color: '#4e453d',
-                    fontSize: '10px',
-                    padding: '3px 9px',
-                    borderRadius: '999px',
-                    fontWeight: 600,
-                    border: '1px solid rgba(51,33,13,0.1)',
-                  }}>
+                  <span key={obj} className="culture-map-popup__chip">
                     {obj}
                   </span>
                 ))}
               </div>
 
               {/* Disclaimer prototype */}
-              <p style={{
-                fontSize: '10px',
-                color: '#80756c',
-                fontStyle: 'italic',
-                margin: 0,
-                paddingTop: '8px',
-                borderTop: '1px solid rgba(51,33,13,0.06)',
-              }}>
+              <p className="culture-map-popup__disclaimer">
                 Prototype pemetaan awal — bukan lokasi final objek budaya.
               </p>
             </div>
